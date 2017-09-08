@@ -16,4 +16,8 @@ double nonLinear_bisection(const Function& f, double lo, double up)
     }
     return x0;
 }
+double derivative(const Function& f, double point)
+{
+    return (f(point+DRV_STP) - f(point-DRV_STP)) / (2*DRV_STP);
+}
 }
