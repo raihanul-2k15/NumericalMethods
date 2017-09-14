@@ -7,7 +7,7 @@ void test_bisection();
 void test_derivative();
 int main()
 {
-    test_derivative();
+    test_bisection();
     return 0;
 }
 void test_derivative()
