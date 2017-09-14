@@ -55,6 +55,6 @@ void test_bisection()
     double lowerLimit,upperLimit;
     cout << "Enter range for solution (example: -500 500): ";
     cin >> lowerLimit >> upperLimit;
-    double solution= numerical_methods::nonLinear_bisection(f,lowerLimit,upperLimit);
+    double solution= numerical_methods::bisection(f,lowerLimit,upperLimit);
     cout << "Solution is x = " << solution << endl;
 }
