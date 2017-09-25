@@ -5,10 +5,36 @@
 using namespace std;
 void test_bisection();
 void test_derivative();
+void test_integration();
 int main()
 {
-    test_bisection();
+    test_integration();
     return 0;
+}
+void test_integration()
+{
+    string func;
+    cout << "Enter function (e.g: 1/(1+x) ): ";
+    getline(cin,func);
+    char var;
+    for (int i=0;i<func.size();i++)
+    {
+        if (func[i]>='a' and func[i]<='z')
+        {
+            var=func[i];
+            break;
+        }
+    }
+    Function f(func,1,var);
+    double lo,hi;
+    cout << "Enter lower-limit and upper-limit (e.g: 0 1): ";
+    cin >> lo >> hi;
+    double integral=numerical_methods::trapezoidal(f,lo,hi,10);
+    cout << "Trapezoidal approximation   : " << integral << endl;
+    integral=numerical_methods::simphson_1_3rd(f,lo,hi,10);
+    cout << "Simphson 1/3rd approximation: " << integral << endl;
+    integral=numerical_methods::simphson_3_8thf,lo,hi,10);
+    cout << "Simphson 3/8th approximation: " << integral << endl;
 }
 void test_derivative()
 {
@@ -18,7 +44,7 @@ void test_derivative()
     char var;
     for (int i=0;i<func.size();i++)
     {
-        if (func[i]>='a' or func[i]<='z')
+        if (func[i]>='a' and func[i]<='z')
         {
             var=func[i];
             break;

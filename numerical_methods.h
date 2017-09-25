@@ -4,8 +4,11 @@
 namespace numerical_methods {
 const double REL_ERR=0.000001;
 const double DRV_STP=0.001;
-double bisection(const Function&,double,double);
-double false_position(const Function&,double,double);
-double derivative(const Function&,double);
+double bisection(const Function& f,double lower_lim,double upper_lim);          // solve equation
+double false_position(const Function& f,double lower_lim,double upper_lim);     // solve equation
+double derivative(const Function& f,double x);
+double trapezoidal(const Function& f, double x1, double x2, int steps);      // integration
+double simphson_1_3rd(const Function& f, double x1, double x2, int steps);   // integration
+double simphson_3_8th(const Function& f, double x1, double x2, int steps);   // integration
 }
 #endif
